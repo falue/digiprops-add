@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>INSTAGRAM - Your feed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- style and script resources -->
+    <link rel="stylesheet" type="text/css" href="../tools/fonts.css?v=3" media="all">
+    <link rel="stylesheet" href="../tools/general.css?v=1" media="all">
+    <link rel="stylesheet" href="stylesheet.css?v=3" media="all">
+    <script src="../tools/general.js?v=1"></script>
+    <script src="javascript.js"></script>
+    <script src="stages.js"></script>
+    <script src="animation.js"></script>
+    
+  </head>
+  <body>
+    <!-- <div class="preload">
+      <img src="imgs/Insta_Compi_HonestJane_sz414_1.png" alt="" />
+      <img src="imgs/Insta_Compi_HonestJane_2.png" alt="" />
+      <img src="imgs/Insta_Compi_HonestJane_sz419_3.png" alt="" />
+    </div> -->
+
+    <article id="article">
+      <span onclick="nextStage(0)">nextStage()</span>
+      <div class="stage" data-stage="0">
+        stage 0
+      </div>
+
+      <div class="stage" data-stage="1">
+        stage 1
+      </div>
+
+      <div class="stage" data-stage="2">
+        stage 2
+      </div>
+
+      <hr>
+      
+      <span onclick="playStage(0)">playStage(0)</span><br>
+      <span onclick="playStage(1)">playStage(1)</span><br>
+      <span onclick="playStage(2, 'arg1, arg2')">playStage(2)</span><br>
+      <span onclick="playStage(3, 'arg1')">playStage(3)</span><br>
+      <!-- <img id="img1" src="imgs/Insta_Compi_HonestJane_sz414_1.png" alt="" onclick="fun1(this)" />
+        <img id="img2" src="imgs/Insta_Compi_HonestJane_2.png" class="hide" alt="" onclick="fun2(this)" />
+        <img id="img3" src="imgs/Insta_Compi_HonestJane_sz419_3.png" class="hide" alt="" onclick="fun3(this)" /> -->
+      
+      <hr>
+
+      <span onclick="moveToPoint(document.getElementById('testAnimation'), 25, 25)">moveToPoint(this, 25, 25)</span><br>
+      <span onclick="moveToPoint(document.getElementById('testAnimation'), 0, 0)">moveToPoint(this, 0, 0)</span><br>
+      <span onclick="moveToPoint(document.getElementById('testAnimation'), 75, 25)">moveToPoint(this, 75, 25)</span><br>
+      <span onclick="moveToPoint(document.getElementById('testAnimation'), 50, 50)">moveToPoint(this, 50, 50)</span><br>
+      
+      <hr>
+      <span onclick="animateToPoint(document.getElementById('testAnimation'), 10, 35)">animateToPoint(element, 10, 35)</span><br>
+      <span onclick="animateToPoint(document.getElementById('testAnimation'), 50, 50, 5000)">animateToPoint(element, 50, 50, 5)</span><br>
+      <span onclick="animateToPoint(document.getElementById('testAnimation'), 0, 75, 1000, 'linear')">animateToPoint(element, 0, 75, 1, 'linear')</span><br>
+      <span onclick="animateToPoint(document.getElementById('testAnimation'), 80, 10, 8000, 'ease', 2000)">animateToPoint(element, 80, 10, 8, 'ease', 2)</span><br>
+      
+      <hr>
+      <span onclick="moveAlongPath(document.getElementById('testAnimation'), pathsTarget)">moveAlongPath(element, paths)</span><br>
+      <span onclick="resetAnimation(document.getElementById('testAnimation'), initialTarget)">resetAnimation</span><br>
+
+      <div id="testAnimation" class="target" style="background-color: blue; color: white;">TARGET</div>
+
+    </article>
+
+    <!-- LEAVE IT BE -->
+    <div class="backToIndex">
+      <a href="../index.html"><i class="material-icons big">menu_book</i></a>
+    </div>
+  </body>
+</html>

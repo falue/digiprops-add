@@ -1,0 +1,89 @@
+body {
+    background-color: black;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header img {
+    width: 100%;
+}
+
+article {
+    position: fixed;
+    /* border: solid red 5px; */
+    top: 12vw;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 12vw);
+    overflow: auto;
+    background-color: black;  /* necessary for hiding img from header beneath */
+}
+
+article img {
+    width: 100%;
+    transform: translateY(-12vw);
+}
+
+.videoContainer {
+    box-sizing: border-box;
+    position: absolute;
+    /* border:solid red 5px; */
+    width: 51.7%;
+    padding-top: 29.3%;  /* constrain proportions */
+    top: 5vw;
+    left: 15%;
+    /* background-color: rgba(0,0,255,0.5); */
+    transform: translate(3px, -2px);
+}
+
+/* .videoContainer video, */
+.video-js {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* .video-js:hover .vjs-big-play-button,
+.video-js .vjs-big-play-button:focus {
+  border-color: #fff;
+  background-color: rgba(115, 133, 159, 0.5);
+  background-color: red;
+  transition: all 0s;
+} */
+
+.linkWindow {
+    box-sizing: border-box;
+    position: absolute;
+    width: 16%;
+    height: 5vw;
+    left: 69.2%;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.linkWindow.link1 {
+    top:5vw;
+    transform: translateY(-2px);
+}
+
+.linkWindow.link2 {
+    top:12vw;
+    transform: translateY(-5px);
+}
+
+.linkWindow.link3 {
+    top:19vw;
+    transform: translateY(-7px);
+}
+
+.linkWindow.link4 {
+    top:26vw;
+    transform: translateY(-7px);
+}

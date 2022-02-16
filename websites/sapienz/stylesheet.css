@@ -1,0 +1,322 @@
+/* a:hover {
+    cursor:pointer;
+} */
+
+.mainColor {
+    color: #48a9dd;
+}
+
+.mainColorBg {
+    background-color: #48a9dd;
+}
+
+.website {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.intranet .website.header {
+    background-color: white;
+    height: initial;
+}
+
+.intranet .website.header img {
+    padding: 1em 1em 0 1em;
+}
+
+.intranet .website:not(.header) {
+    /* background-color: blue; */
+    box-sizing: border-box;
+    top: 155px;
+    padding: 1em;
+}
+
+.header {
+    position: fixed;
+    height: 15vw; /* defines height in percent of width */
+    z-index: 11;
+}
+
+.header img.fullscreen,
+.website img.fullscreen {
+    width: 100%;
+}
+
+/* FLOATING LINK BUTTONS */
+.imageLinks {
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    top:0;
+    left:0;
+    width: 10%;
+    height: 6vw;
+    cursor: pointer;
+}
+
+.linkPreview .imageLinks {
+    background-color: rgba(255, 0, 238, 0.5);
+}
+
+#loginButton {
+    top:0;
+    left: initial;
+    right:0;
+    width: 33%;
+    height: 12vw;
+}
+
+#mediaButton {
+    top:10vw;
+    left:22%;
+    width: 10%;
+    height: 6vw;
+}
+
+#karriereButton {
+    top:10vw;
+    left:44%;
+    width: 10%;
+    height: 6vw;
+}
+
+#indexButton {
+    top:0;
+    left:0;
+    width: 23%;
+    height: 17vw;
+}
+
+/* CONTENT */
+.login, .gallery {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    z-index: 12;
+}
+
+.loginWindow, .galleryWindow {
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    top: 200px;
+    margin-left: -150px;
+    background-color: white;
+    /* border-radius: 15px; */
+    border: thin grey solid;
+    padding:1em;
+}
+
+.galleryWindow {
+    top: 100px;
+    width: 600px;
+    margin-left: -300px;
+}
+
+#galleryImage {
+    height: 400px;
+    background-color: lightgrey;
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+
+.loginWindow input[type=text],
+.loginWindow input[type=number],
+.loginWindow input[type=password] {
+    font-size: 1.2em;
+    padding:7px;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+.loginWindow .loginButtons input {
+    border: none;
+    background-color: #48a9dd;
+    color:white;
+    padding: .75em 1.25em;
+}
+
+.loginWindow input[type=submit]:focus {
+    background-color: #62eb82;
+}
+
+.loginWindow .padding {
+    padding: 1em;
+}
+
+.tokens input {
+    width: 2em;
+    height: 3em;
+    border-radius: 0;
+    border:thin black solid;
+    border-right: none;
+}
+
+.tokens input:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.tokens input:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right:thin black solid;
+}
+
+/* INTRANET */
+/* STATUSBAR */
+.statusbar {
+    padding: .5em 1em;
+    border-bottom: solid grey thin;
+}
+
+.statusbar span {
+    padding: 0 1em;
+}
+
+/* MENU */
+.menu {
+    width: 100%;
+    border-bottom: solid grey thin;
+    height: 2em;
+    border-collapse: collapse;
+}
+
+.menu i {
+    font-size: 1.25em;
+}
+
+.menu th:not(:last-of-type) {
+    border-right: solid rgba(255,255,255,.2) thin;
+}
+
+.menu th:hover {
+    background-color: rgba(255,255,255,.1);
+}
+
+.settings {
+    padding: .2em;
+}
+
+
+/* USER MENU */
+.userMenu {
+    box-sizing: border-box;
+    position: absolute;
+    margin:1em;
+    padding:0.5em;
+    top:0;
+    left: 0;
+    width:25%;
+    background-color: lavender;
+}
+
+.tools {
+    box-sizing: border-box;
+    position: absolute;
+    margin:1em;
+    padding:0.5em;
+    top:0;
+    left: 72.5%;
+    width:25%;
+    background-color: lavender;
+}
+
+/* FILES */
+
+.filebrowserLoader {
+    font-size: 1.25em;
+    width: 100%;
+    padding-top:150px;
+    /* background-color: red; */
+}
+
+.fileBrowser {
+    box-sizing: border-box;
+    padding:0 1em;
+    left: 25%;
+    top:0;
+    position: absolute;
+    width:50%;
+    overflow: hidden;
+}
+
+.filelist.path {
+    padding:.5em .5em 0 .5em;
+}
+
+.filelist {
+    background-color: white;
+    color: grey;
+    width: 100%;
+    box-sizing: border-box;
+    /* max-height: 24em; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    user-select: none;
+}
+
+/* .selected i,
+.filelist tr.selected td:nth-child(2),
+.selected {
+    background-color: rgb(52, 52, 223) !important;
+    color: white !important;
+} */
+
+.filelist table {
+    width: 150%;
+    border-collapse: collapse;
+}
+
+.filelist td {
+    text-align: left;
+    width: initial;
+    border-right: solid thin rgba(0,0,0,0.05);
+    border-bottom: solid thin lightgrey;
+    padding-left: .25em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.filelist th {
+    font-weight: normal;
+    text-align: left;
+    border-bottom: solid thin grey;
+    padding-left: .25em;
+}
+
+.filelist td:nth-child(1) {
+    width: 1.75em;
+    padding-right: initial;
+}
+.filelist td:nth-child(2) {
+    color: black;
+    padding-right: 1em;
+    width: 15%;
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.filelist td:nth-child(3),
+.filelist td:nth-child(6),
+.filelist td:nth-child(4) {
+    width: 5em;
+}
+.filelist td:nth-child(5) {
+    font-style: italic;
+    width: 8em;
+}
+
+/* .filelist tr:nth-child(even) {
+    background: lightgrey;
+} */
+/* .filelist tr:nth-child(even) td:not(:last-of-type) {
+    border-right: solid thin lightgrey;
+} */

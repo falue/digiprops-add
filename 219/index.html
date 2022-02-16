@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Calibri, Arial, Helvetica;
+    }
+
+    .backToIndex {
+      position: fixed;
+      box-sizing: border-box;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      padding: 7px;
+      border-top-right-radius: 50%;
+      background-color: rgba(88, 150, 255, 1);
+      opacity: 0;
+      z-index: 999;
+    }
+
+    .backToIndex:hover {
+      opacity: 1;
+    }
+
+    .backToIndex a:hover {
+      color: white !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table border="0">
+    <tr>
+      <td align="center" colspan="4" bgcolor="#58a7f0">
+        <font size="6" color="#FFFFFF">
+          <p style="padding:20px">KFZ Kennzeichen</p>
+        </font>
+      </td>
+    </tr>
+
+    <tr style="border-radius: 55px; border: 0px solid #797979;">
+
+      <th align="center">
+        <img src="sw.png" style="max-width:40px">
+      </th>
+
+      <th align="center">
+        <input type="text" name="text1" size="10" STYLE="color: #323232; 
+  font-weight: bold; 
+  text-align:center; 
+  text-transform:uppercase;
+  font-family: Calibri,Arial,Helvetica; 
+  font-size: 30px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  width: 200px;
+  border: 0; 
+  outline: none" value=" BS &middot;">
+      </th>
+
+      <th align="center" style="padding-top: 10px; padding-bottom: 10px">
+        <img src="bs.jpg" style="max-width:40px">
+      </th>
+
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td align="center" colspan="2" bgcolor="#EFEFEF">
+
+        <input type="submit" STYLE="color: #323232; 
+  text-align: center; 
+  font-family: Calibri,Arial,Helvetica; 
+  font-size: 25px; 
+  padding: 10px; 
+  background-color: #EFEFEF; 
+  border: 0px; " size=" 5" value="Abbrechen">
+      </td>
+
+      <td align="center" colspan="2" bgcolor="#EFEFEF">
+        <a href="2.html">
+
+          <input type="submit" STYLE="color: #323232; 
+  text-align: center;  
+  font-family: Calibri,Arial,Helvetica; 
+  font-size: 25px; 
+  padding: 20px; 
+  background-color: #EFEFEF; 
+  border: 1px;" size="5" value="Suchen"></a>
+      </td>
+    </tr>
+
+  </table>
+
+  <!-- LEAVE IT BE -->
+  <div class="backToIndex">
+    <a href="../index.html">back</a>
+  </div>
+</body>
+
+</html>

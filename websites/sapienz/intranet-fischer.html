@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Sapienz.ch - Intranet / Dr. R. Fischer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- style and script resources -->
+  <link rel="stylesheet" type="text/css" href="../../tools/fonts.css" media="all">
+  <link rel="stylesheet" href="../../tools/general.css" media="all">
+  <link rel="stylesheet" href="stylesheet.css" media="all">
+  <script src="../../tools/general.js"></script>
+  <script src="javascript.js"></script>
+</head>
+
+<body class="intranet" onload="loadFileBrowser();">
+  <!-- THIS GETS DISPLAYED IF PAGE IS VISITED DIRECTLY FROM WITHIN IFRAME -->
+  <!-- JS of UNIK on iFrame onload= -->
+  <div id="iframeSpoofUrl" class="hide">https://www.sapienz.ch/intranet/rfischer</div>
+  
+
+
+  <div class="website header">
+    <!-- <img src="imgs/index.jpg" alt="" class="fullscreen"> -->
+    <img src="imgs/logo.jpg" alt="" class="pointer" onclick="window.location.href = 'index.html';">
+
+    <!-- STATUSBAR -->
+    <div class="mainColor statusbar">
+      Desktop <span class="op25">|</span>
+      Remote  <span class="op25">|</span>
+      Sitzungen <span class="op25">|</span>
+      Forschung <span class="op25">|</span>
+      DAU <span class="op25">|</span>
+      Sapienz
+    </div>
+    <div class="right top settings padding2 mainColor pointer" onclick="window.location.href = 'index.html';">
+      INTRANET FISCHER
+      <i class="material-icons grey small valignText">settings</i>
+      <br>
+      <span class="small grey">
+        Logout | Einstellungen
+      </span>
+    </div>
+
+    <table class="menu">
+      <tr>
+        <th><i class="material-icons mainColor">science</i></th>
+        <th><i class="material-icons mainColor">create_new_folder</i></th>
+        <th><i class="material-icons mainColor">no_accounts</i></th>
+        <th><i class="material-icons mainColor">account_tree</i></th>
+        <th><i class="material-icons mainColor">biotech</i></th>
+        <th><i class="material-icons mainColor">storage</i></th>
+        <th><i class="material-icons mainColor">insert_link</i></th>
+        <th><i class="material-icons mainColor">backup</i></th>
+        <th><i class="material-icons mainColor">storm</i></th>
+        <th><i class="material-icons mainColor">star</i></th>
+        <th><i class="material-icons mainColor">computer</i></th>
+        <th><i class="material-icons mainColor">cast_connected</i></th>
+      </tr>
+    </table>  
+  </div>  
+
+  <div class="website">
+    <div class="userMenu">
+      <h3>Schnellaktionen</h3>
+      <br>
+      Aktion 1<br>
+      Aktion 2<br>
+      Aktion 3<br>
+      Aktion 4<br>
+      Aktion 5<br>
+      Aktion 6<br>
+      Aktion 7<br>
+      Aktion 8<br>
+      Aktion 9<br>
+      Aktion 10<br>
+      Aktion 11<br>
+      Aktion 12<br>
+      Aktion 13<br>
+    </div>
+
+    <div class="tools">
+      <h3>Letzte Aktivitäten</h3>
+      <br>
+      Log 1<br>
+      Log 2<br>
+      Log 3<br>
+      Log 4<br>
+      Log 5<br>
+      Log 6<br>
+      Log 7<br>
+      Log 8<br>
+    </div>
+
+    <div class="fileBrowser">
+      <div class="filelist path">
+        Dateibrowser
+      </div>
+
+      <div id="filebrowserLoader" class="filebrowserLoader alignCenter">
+        <i class="material-icons spin mainColor valign medium">refresh</i> Wird geladen.. <span id="loadingBrowser">0%</span>
+      </div>
+
+      <div id="filelist" class="filelist hide">
+        <table>
+          <tr>
+            <th>
+            </th>
+            <th>Filename<i class="material-icons grey advanced op50">arrow_drop_up</i>
+            </th>
+            <th>Size
+            </th>
+            <th>Owner
+            </th>
+            <th>Rights
+            </th>
+            <th>Checksum
+            </th>
+            <th>Group
+            </th>
+          </tr>
+          
+          <!-- TH end -->
+
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Beiträge</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr id="imageLoadingFolderClosed" onclick="loadImages();">
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Bilder</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr id="imageLoadingFolder" class="hide" onclick="unloadImages();">
+            <td><i class="material-icons mainColor small valignText">folder</i></td>
+            <td>Bilder</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr id="imageLoading" class="hide">
+            <td></td>
+            <td><i class="material-icons spin mainColor valign small">refresh</i> Wird geladen.. <span id="loadingGallery">0%</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42729.jpg
+            </td> 
+            <td>2.5<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42730.jpg
+            </td>
+            <td>1.5<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42731.jpg
+            </td>
+            <td>1.2<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42732.jpg
+            </td>
+            <td>0.9<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42733.jpg
+            </td>
+            <td>1.25<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42734.jpg
+            </td>
+            <td>2.2<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42735.jpg
+            </td>
+            <td>1.1<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42736.jpg
+            </td>
+            <td>1.0<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42737.jpg
+            </td>
+            <td>1.2<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42738.jpg
+            </td>
+            <td>1.4<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42739.jpg
+            </td>
+            <td>1.1<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42740.jpg
+            </td>
+            <td>1.9<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42741.jpg
+            </td>
+            <td>1.8<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr" onclick="openGallery();">
+            <td></td>
+            <td>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_42742.jpg
+            </td>
+            <td>1.8<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Daten</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Desktop</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Dokumente</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Downloads</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Dropbox</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>iCloud Drive</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Musik</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Sci-Hub</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Videos</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Zuletzt verwendet</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>system32</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Windows</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <tr>
+            <td><i class="material-icons mainColor small valignText">folder_open</i></td>
+            <td>Netzwerk</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+
+  <div id="gallery" class="gallery hide">
+    <div class="galleryWindow shadow" onclick="openImage(1);">
+      <div id="galleryImage" class="maxWidth"></div>
+      <br>
+      <br>
+      <div id="galleryDesc" class="bottom mainColor left padding loginButtons">
+        loading..
+      </div>
+      <div class="bottom right grey padding loginButtons" onclick="hide('gallery')">
+        CLOSE
+      </div>
+    </div>
+  </div>
+
+
+  <!-- LEAVE IT BE -->
+  <div class="backToIndex">
+    <a href="../../index.html"><i class="material-icons big">menu_book</i></a>
+  </div>
+
+</body>
+</html>

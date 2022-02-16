@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>INSTAGRAM - Your feed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- style and script resources -->
+    <link rel="stylesheet" type="text/css" href="../tools/fonts.css?v=3" media="all">
+    <link rel="stylesheet" href="../tools/general.css?v=1" media="all">
+    <link rel="stylesheet" href="stylesheet.css?v=3" media="all">
+    <script src="../tools/general.js?v=1"></script>
+    <script src="javascript.js?v=1"></script>
+    
+  </head>
+  <body>
+    <div class="preload">
+      <img src="imgs/Insta_Compi_HonestJane_sz414_1.png" alt="" />
+      <img src="imgs/Insta_Compi_HonestJane_2.png" alt="" />
+      <img src="imgs/Insta_Compi_HonestJane_sz419_3.png" alt="" />
+    </div>
+
+    <article id="article">
+      <img id="img1" src="imgs/Insta_Compi_HonestJane_sz414_1.png" alt="" onclick="scrollToTop('article'); swap(this.id, 'img2'); changeTitle('INSTAGRAM - Blocked Messages');" />
+      <img id="img2" src="imgs/Insta_Compi_HonestJane_2.png" class="hide" alt="" onclick="scrollToTop('article'); swap(this.id, 'img3'); changeTitle('INSTAGRAM - Message from MOVIE_007');" />
+      <img id="img3" src="imgs/Insta_Compi_HonestJane_sz419_3.png" class="hide" alt="" onclick="scrollToTop('article'); swap(this.id, 'img1'); changeTitle('INSTAGRAM - Your feed');" />
+    </article>
+
+    <!-- LEAVE IT BE -->
+    <div class="backToIndex">
+      <a href="../index.html"><i class="material-icons big">menu_book</i></a>
+    </div>
+  </body>
+</html>

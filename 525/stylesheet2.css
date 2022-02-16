@@ -1,0 +1,53 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Calibri, Arial, Helvetica;
+
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:link {
+    color: #0C9C1E;
+  }
+
+  a:visited {
+    color: #0C9C1E;
+  }
+
+  a:hover {
+    color: #0C9C1E;
+  }
+
+  a:active {
+    color: #0C9C1E;
+  }
+
+  .backToIndex {
+    position: fixed;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    padding: 7px;
+    border-top-right-radius: 50%;
+    background-color: rgba(88, 150, 255, 1);
+    opacity: 0;
+    z-index: 999;
+  }
+
+  .backToIndex:hover {
+    opacity: 1;
+  }
+
+  .backToIndex a:hover {
+    color: white !important;
+  }

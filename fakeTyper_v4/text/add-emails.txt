@@ -1,0 +1,29 @@
+[20XX-XX-XX_XX:XX:11] Datei.pdf versendet als Nachricht an +41 78 978 17 83
+[20XX-XX-XX_XX:XX:12] Datei.pdf versendet als email an erni@metis.ch
+[20XX-XX-XX_XX:XX:13] Datei.pdf versendet als email an hunziker@sapienz.ch
+[20XX-XX-XX_XX:XX:14] Datei.pdf versendet als email an chatrinahofer@sapienz.ch
+[20XX-XX-XX_XX:XX:15] Datei.pdf versendet als Nachricht an 00 41 78 831 75 28
+[20XX-XX-XX_XX:XX:16] Datei.pdf versendet als Nachricht an 00 41 77 448 46 40
+[20XX-XX-XX_XX:XX:17] Datei.pdf versendet als Nachricht an +41 78 145 84 91
+[20XX-XX-XX_XX:XX:18] Datei.pdf versendet als email an fadriackermann@sapienz.ch
+[20XX-XX-XX_XX:XX:19] Datei.pdf versendet als email an innegritegli@metis.ch
+[20XX-XX-XX_XX:XX:20] Datei.pdf versendet als Nachricht an 00 41 76 372 85 12
+[20XX-XX-XX_XX:XX:21] Datei.pdf versendet als email an hans-rudolffriedli@sapienz.ch
+[20XX-XX-XX_XX:XX:22] Datei.pdf versendet als email an j.schnyder@metis.ch
+[20XX-XX-XX_XX:XX:23] Datei.pdf versendet als Nachricht an 00 41 76 937 73 44
+[20XX-XX-XX_XX:XX:24] Datei.pdf versendet als email an b.kaeser@metis.ch
+[20XX-XX-XX_XX:XX:25] Datei.pdf versendet als Nachricht an 076 202 28 45
+[20XX-XX-XX_XX:XX:26] Datei.pdf versendet als Nachricht an 078 766 11 63
+[20XX-XX-XX_XX:XX:27] Datei.pdf versendet als email an irmelinflueckiger@sapienz.ch
+[20XX-XX-XX_XX:XX:28] Datei.pdf versendet als email an fontana@sapienz.ch
+[20XX-XX-XX_XX:XX:29] Datei.pdf versendet als email an schaub@metis.ch
+[20XX-XX-XX_XX:XX:29] Datei.pdf versendet als email an markusritter@metis.ch
+[20XX-XX-XX_XX:XX:30] Datei.pdf versendet als email an uelibalmer@sapienz.ch
+[20XX-XX-XX_XX:XX:31] Datei.pdf versendet als Nachricht an 077 452 37 13
+[20XX-XX-XX_XX:XX:32] Datei.pdf versendet als Nachricht an 077 376 66 86
+[20XX-XX-XX_XX:XX:33] Datei.pdf versendet als email an g.waelti@sapienz.ch
+[20XX-XX-XX_XX:XX:34] Datei.pdf versendet als email an rey@metis.ch
+[20XX-XX-XX_XX:XX:35] Datei.pdf versendet als email an helvetiabieri@sapienz.ch
+[20XX-XX-XX_XX:XX:36] Datei.pdf versendet als email an joeriwalser@sapienz.ch
+[20XX-XX-XX_XX:XX:37] Datei.pdf versendet als email an juerghostettler@metis.ch
+[20XX-XX-XX_XX:XX:38] Datei.pdf versendet als email an ernestintanner@metis.ch

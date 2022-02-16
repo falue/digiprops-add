@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheet.css" media="all">
+
+  <script>
+    function search(ele) {
+      if(event.key === 'Enter') {
+        window.location='2.html';       
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <table>
+    <table border="0">
+      <tr>
+        <td align="center" colspan="2" bgcolor="white" style="padding: 5px;  
+  border: 0px solid #696969">
+          <font size="6" color="#FFFFFF">
+            <img src="imgs/search.jpg" style="max-width:200px">
+            </span>
+        </td>
+      </tr>
+
+      <tr style="border: 1px solid #BCBCBC">
+
+        <th align="center">
+          <input type="text" size="80" maxlength="80" onkeydown="search(this)">
+          <span style="font-weight: 100;
+  font-size: 30px;
+  color: #BCBCBC;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite">
+          </span>
+        </th>
+
+        <th align="center" colspan="2" bgcolor="#EFEFEF">
+          <a href="2.html">
+
+            <button type="submit" style="align:center;
+  padding: 5px; 
+  border: 1px;" value="Suchen">
+              <img src="imgs/s.png" style="max-width:30px">
+            </button>
+          </a>
+        </th>
+
+      </tr>
+      <th align="center" colspan="2" style="color: #797979;
+  font-family: Calibri,Arial,Helvetica;
+  padding: 25px">
+        Search angeboten auf:
+        <br>
+        <br>
+        <span style="color: #019DB4">
+          English &nbsp;&nbsp;Fran&ccedil;ais &nbsp;&nbsp;Italiano &nbsp;&nbsp;Rumantsch
+        </span>
+      </th>
+    </table>
+  </table>
+</body>
+
+<!-- LEAVE IT BE -->
+<div class="backToIndex">
+  <a href="../index.html">back</a>
+</div>
+
+</html>

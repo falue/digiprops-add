@@ -1,0 +1,10 @@
+*.pyc
+_archiv
+.cache
+.idea
+.DS_Store
+.AppleDouble
+.Parent
+_autosave-*
+fp-info-cache
+caddy_darwin_amd64
