@@ -13,7 +13,7 @@ a:hover {
 
 .header {
     position: fixed;
-    height: 17vw; /* defines height in percent of width */
+    height: 15vw; /* defines height in percent of width */
     z-index: 11;
 }
 
