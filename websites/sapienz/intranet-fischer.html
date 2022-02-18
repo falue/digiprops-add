@@ -93,7 +93,11 @@
 
     <div class="fileBrowser">
       <div class="filelist path">
-        Dateibrowser
+        Dateibrowser 
+        <span class="mainColor">
+          <i class="material-icons valign">arrow_right</i>
+          LOKAL
+        </span>
       </div>
 
       <div id="filebrowserLoader" class="filebrowserLoader alignCenter">
@@ -131,7 +135,8 @@
             <td>-</td>
           </tr>
           
-          <tr id="imageLoadingFolderClosed" onclick="loadImages();">
+          <!-- CLOSED FOLDER BILDER -->
+          <tr id="imageLoadingFolderClosed" onclick="loadSubfolders();">
             <td><i class="material-icons mainColor small valignText">folder_open</i></td>
             <td>Bilder</td>
             <td>-</td>
@@ -141,6 +146,7 @@
             <td>-</td>
           </tr>
           
+          <!-- OPEN FOLDER BILDER -->
           <tr id="imageLoadingFolder" class="hide" onclick="unloadImages();">
             <td><i class="material-icons mainColor small valignText">folder</i></td>
             <td>Bilder</td>
@@ -150,10 +156,73 @@
             <td>-</td>
             <td>-</td>
           </tr>
-          
-          <tr id="imageLoading" class="hide">
+
+          <!-- OTHER FOLDERS -->
+          <tr class="hide subfolder" onclick="">
             <td></td>
-            <td><i class="material-icons spin mainColor valign small">refresh</i> Wird geladen.. <span id="loadingGallery">0%</span></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> __BACKUP</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> __BACKUP Kopie</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Allgemein</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Diverses</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          
+          <!-- CLOSED FOLDER Family -->
+          <tr id="closedFolderFamily" class="hide subfolder" onclick="loadImages('family');">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Family</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <!-- OPEN FOLDER Family -->
+          <tr id="openFolderFamily" class="hide imageGalleryTr family">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder</i> Family</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr id="imageLoadingFamily" class="hide">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons spin mainColor valign small">refresh</i> Wird geladen.. <span id="loadingGalleryFamily">0%</span></td>
             <td></td>
             <td></td>
             <td></td>
@@ -161,9 +230,52 @@
             <td></td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">folder_open</i>
+              2018
+            </td> 
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr family">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">folder_open</i>
+              2019
+            </td> 
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr family">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">folder_open</i>
+              2020
+            </td> 
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42729.jpg
             </td> 
@@ -174,9 +286,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42730.jpg
             </td>
@@ -187,9 +300,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42731.jpg
             </td>
@@ -200,9 +314,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42732.jpg
             </td>
@@ -213,9 +328,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42733.jpg
             </td>
@@ -226,9 +342,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42734.jpg
             </td>
@@ -239,9 +356,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42735.jpg
             </td>
@@ -252,9 +370,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42736.jpg
             </td>
@@ -265,9 +384,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42737.jpg
             </td>
@@ -278,9 +398,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42738.jpg
             </td>
@@ -291,9 +412,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42739.jpg
             </td>
@@ -304,9 +426,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42740.jpg
             </td>
@@ -317,9 +440,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42741.jpg
             </td>
@@ -330,9 +454,10 @@
             <td>None</td>
           </tr>
 
-          <tr class="hide imageGalleryTr" onclick="openGallery();">
+          <tr class="hide imageGalleryTr family" onclick="openGallery(family, fileNamesFamily);">
             <td></td>
             <td>
+              <i class="material-icons clear small valignText">image</i>
               <i class="material-icons mainColor small valignText">image</i>
               IMG_42742.jpg
             </td>
@@ -342,6 +467,573 @@
             <td>2522</td>
             <td>None</td>
           </tr>
+
+          <!-- OTHER FOLDERS -->
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Intern</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Intern Archiv</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Intern Archiv 2</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <!-- CLOSED FOLDER LENA -->
+          <tr id="closedFolderLena" class="hide subfolder" onclick="loadImages('lena');">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Lena</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          
+          <!-- OPEN FOLDER LENA -->
+          <tr id="openFolderLena" class="hide imageGalleryTr lena">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder</i> Lena</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr id="imageLoadingLena" class="hide">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons spin mainColor valign small">refresh</i> Wird geladen.. <span id="loadingGalleryLena">0%</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-22.jpg
+            </td> 
+            <td>2.2<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-23.jpg
+            </td> 
+            <td>1.5<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-24.jpg
+            </td> 
+            <td>705<span class="grey op75">kb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-25.jpg
+            </td> 
+            <td>1.0<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-26.jpg
+            </td> 
+            <td>1.4<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-27.jpg
+            </td> 
+            <td>2.4<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-28.jpg
+            </td> 
+            <td>2.5<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-29.jpg
+            </td> 
+            <td>2.76<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-30.jpg
+            </td> 
+            <td>1.46<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-31.jpg
+            </td> 
+            <td>1.33<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-32.jpg
+            </td> 
+            <td>1.35<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-33.jpg
+            </td> 
+            <td>1.48<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-34.jpg
+            </td> 
+            <td>1.8<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-35.jpg
+            </td> 
+            <td>1.82<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-36.jpg
+            </td> 
+            <td>2.05<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-37.jpg
+            </td> 
+            <td>1.33<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-38.jpg
+            </td> 
+            <td>3.14<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-39.jpg
+            </td> 
+            <td>1.44<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+          
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-40.jpg
+            </td> 
+            <td>1.46<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-41.jpg
+            </td> 
+            <td>2.45<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-42.jpg
+            </td> 
+            <td>1.97<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-43.jpg
+            </td> 
+            <td>1.1<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-44.jpg
+            </td> 
+            <td>1.2<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-45.jpg
+            </td> 
+            <td>1.02<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-46.jpg
+            </td> 
+            <td>1.65<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-47.jpg
+            </td> 
+            <td>1.7<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-48.jpg
+            </td> 
+            <td>1.95<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+          <tr class="hide imageGalleryTr lena" onclick="openGallery(lena, fileNamesLena);">
+            <td></td>
+            <td>
+              <i class="material-icons clear small valignText">image</i>
+              <i class="material-icons mainColor small valignText">image</i>
+              IMG_1003-49.jpg
+            </td> 
+            <td>2.25<span class="grey op75">mb</span></td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>2522</td>
+            <td>None</td>
+          </tr>
+
+
+          <!-- OTHER FOLDERS -->
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Mediathek</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> OSAG-Bilder_1</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> OSAG-Bilder_2</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> OSAG-Bilder_3</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Portraits</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Portraits alt</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Präs_001</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Präs_002</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Präs_003</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Präs_004-1</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Präs_005</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="hide subfolder" onclick="">
+            <td></td>
+            <td><i class="material-icons mainColor small valignText">folder_open</i> Recherche generell</td>
+            <td>-</td>
+            <td>RF</td>
+            <td>rwxr-xr-x (755)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
           
           <tr>
             <td><i class="material-icons mainColor small valignText">folder_open</i></td>
@@ -445,7 +1137,7 @@
           
           <tr>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="small grey"><br>System</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -497,18 +1189,25 @@
     </div>
   </div>
 
-  <!-- GALLERY -->
 
+  <!-- GALLERY -->
   <div id="gallery" class="gallery hide">
-    <div class="galleryWindow shadow" onclick="openImage(1);">
-      <div id="galleryImage" class="maxWidth"></div>
+    <div class="galleryWindow shadow">
+      <div class="galleryImageLoader maxWidth"></div>
+      <div id="galleryImage" class="maxWidth" onclick="openImage(1);"></div>
       <br>
       <br>
       <div id="galleryDesc" class="bottom mainColor left padding loginButtons">
         loading..
       </div>
-      <div class="bottom right grey padding loginButtons" onclick="hide('gallery')">
-        CLOSE
+      <div class="bottom right grey padding loginButtons">
+        <button class="valign" onclick="openImage(-1);">
+          <i class="material-icons">arrow_back</i></button>
+        &nbsp;
+        <button class="valign" onclick="openImage(1);">
+          <i class="material-icons">arrow_forward</i></button>
+        &nbsp;
+        <button onclick="closeGallery()">CLOSE</button>
       </div>
     </div>
   </div>
