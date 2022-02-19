@@ -32,6 +32,8 @@ show, folder_open, ./, music
 # hidden in favorite list, but accessible via direct input
 hide, favorite, ../websites/metis/index.html, metis.ch
 hide, favorite, ../websites/sapienz/index.html, sapienz.ch
+hide, favorite, ../websites/sapienz/intranet-fischer.html, sapienz.ch/fischer$sapienz INTRA FISCHER
+hide, favorite, ../websites/sapienz/intranet-kemp.html, sapienz.ch/kemp$sapienz INTRA KEMPP
 hide, favorite, ../websites/runnershigh/index.html, runnershigh.ch
 hide, favorite, ../427/index.html, cityflesh.com$#427 cityflesh
 hide, favorite, ../650/index.html, cityflesh.com$#650 cityflesh
