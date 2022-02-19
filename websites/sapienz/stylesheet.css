@@ -221,24 +221,59 @@
 /* USER MENU */
 .userMenu {
     box-sizing: border-box;
-    position: absolute;
-    margin:1em;
-    padding:0.5em;
+    position: fixed;
+    margin-top:150px;
+    padding:1.5em;
     top:0;
     left: 0;
     width:25%;
+    /* background-color: lavender; */
+}
+
+.box {
+    border: thin grey solid;
+    /* padding:1em; */
+    border-radius: 5px;
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+.box div.title {
     background-color: lavender;
+    padding:0.5em 1em;
+}
+.box div.content {
+    padding:0.5em 1em;
+}
+.box div.content ul li {
+    margin-bottom: .25em;
+}
+.box div.content ul {
+    padding:0 1em;
+    list-style-type: square;
+}
+
+.tile {
+    padding:.5em;
+    margin:1em 1em 1em 0;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 .tools {
     box-sizing: border-box;
-    position: absolute;
-    margin:1em;
-    padding:0.5em;
+    position: fixed;
+    margin-top:150px;
+    padding:1.5em;
     top:0;
-    left: 72.5%;
+    left: 75%;
     width:25%;
-    background-color: lavender;
+    /* background-color: lavender; */
+}
+
+.tools .box {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    white-space:nowrap;
 }
 
 /* FILES */
@@ -252,7 +287,7 @@
 
 .fileBrowser {
     box-sizing: border-box;
-    padding:0 1em;
+    padding:1em 1em 10em 1em;
     left: 25%;
     top:0;
     position: absolute;
