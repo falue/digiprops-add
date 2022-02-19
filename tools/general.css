@@ -56,9 +56,10 @@ article {
 .backToIndex a:hover {
     color: white !important;
 }
-.shadow {
-    box-shadow: rgba(0,0,0,0.5) 3px 5px 7px;
-}
+.shadow { box-shadow: rgba(0,0,0,0.5) 3px 5px 7px; }
+.shadowHover:hover { box-shadow: rgba(0,0,0,0.5) 3px 5px 7px; }
+.shadowLight { box-shadow: rgba(0,0,0,0.25) 3px 5px 7px; }
+.shadowLightHover:hover { box-shadow: rgba(0,0,0,0.25) 3px 5px 7px; }
 
 a:link,
 a:visited,
